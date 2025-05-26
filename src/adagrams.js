@@ -57,15 +57,25 @@ export const drawLetters = () => {
   return hand;
 };
 
-
+// wave 2
 export const usesAvailableLetters = (input, lettersInHand) => {
-  // Implement this method for wave 2
+  const handCopy = [...lettersInHand];
+  for (let char of input.toUpperCase()) {
+    const index = handCopy.indexOf(char);
+    if (index === -1) {
+      return false;
+    }
+    handCopy.splice(index, 1);
+  }
+  return true;
 };
 
+// wave 3
 export const scoreWord = (word) => {
   // Implement this method for wave 3
 };
 
+// wave 4
 export const highestScoreFrom = (words) => {
   // Implement this method for wave 4
 };
