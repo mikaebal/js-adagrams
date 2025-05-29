@@ -35,6 +35,7 @@ const LETTER_POOL = {
 };
 
 describe("Adagrams", () => {
+  // wave 1
   describe("drawLetters", () => {
     it("draws ten letters from the letter pool", () => {
       const drawn = drawLetters();
@@ -70,6 +71,7 @@ describe("Adagrams", () => {
     });
   });
 
+  // wave 2
   describe("usesAvailableLetters", () => {
     it("returns true if the submitted letters are valid against the drawn letters", () => {
       const drawn = ["D", "O", "G", "X", "X", "X", "X", "X", "X", "X"];
@@ -96,6 +98,7 @@ describe("Adagrams", () => {
     });
   });
 
+  // wave 3
   describe("scoreWord", () => {
     const expectScores = (wordScores) => {
       Object.entries(wordScores).forEach(([word, score]) => {
@@ -120,7 +123,8 @@ describe("Adagrams", () => {
     });
 
     it("returns a score of 0 if given an empty input", () => {
-      throw "Complete test";
+      expect(scoreWord("")).toBe(0);
+      expect(scoreWord()).toBe(0);
     });
 
     it("adds an extra 8 points if word is 7 or more characters long", () => {
@@ -133,6 +137,7 @@ describe("Adagrams", () => {
     });
   });
 
+  // wave 4
   describe.skip("highestScoreFrom", () => {
     it("returns a hash that contains the word and score of best word in an array", () => {
       const words = ["X", "XX", "XXX", "XXXX"];
